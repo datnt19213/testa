@@ -49,11 +49,11 @@
                 else{
                     if($img['type']=="image/jpg" || $img['type']=="image/jpeg" || $img['type']=="image/png" || $img['type']=="image/gif"){
                         if($img['size']<=614400){
-                            $result = pg_query($conn, "SELECT * FROM product WHERE ProName='$name'") or die(pg_error($conn));
+                            $result = pg_query($conn, "SELECT * FROM public.product WHERE ProName='$name'") or die(pg_error($conn));
                             if(pg_num_rows($result)==0){
                                 copy($img['tmp_name'], "images/".$img['name']);
                                 $filePic =$img['name'];
-                                $sqlstring = "INSERT INTO product(ProName, ProImage, CategoryID,  Price, Pro_Qty) VALUES ('$name', '$filePic', '$cate', '$price', '$qty')";
+                                $sqlstring = "INSERT INTO punlic.product(ProName, ProImage, CategoryID,  Price, Pro_Qty) VALUES ('$name', '$filePic', '$cate', '$price', '$qty')";
                                 pg_query($conn, $sqlstring);
                                 echo '<meta http-equiv="refresh" content="0;URL=?page=administrator.php"/>';
                             }
