@@ -29,9 +29,9 @@
                 else{
                     include_once("connection.php");
                     $pass = md5($pa);
-                    $res = pg_query($conn, "SELECT Username, Password, Full_Name FROM customer WHERE Username='$us' AND Password='$pa'");
+                    $res = pg_query($conn, "SELECT Username, Password, Full_Name FROM public.customer WHERE Username='$us' AND Password='$pa'");
                     if(!$res){echo "error ($conn)";}
-                    $ad = pg_query($conn, "SELECT AdminName, Admin_Password FROM admin_account WHERE AdminName = '$us' and Admin_Password = '$pa'");
+                    $ad = pg_query($conn, "SELECT AdminName, Admin_Password FROM public.admin_account WHERE AdminName = '$us' and Admin_Password = '$pa'");
                     if(!$ad){echo "error ($conn)";}
 
                     if(pg_num_rows($res)==1)
