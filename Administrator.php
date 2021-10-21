@@ -53,7 +53,7 @@
                         <th>Update</th>
                     </tr>
                     <?php
-                        $sql = pg_query($conn, "SELECT * FROM product") or die(pg_error($conn));
+                        $sql = pg_query($conn, "SELECT * FROM public.product") or die(pg_error($conn));
                         if(pg_num_rows($sql)>0){
                             while($result = pg_fetch_assoc($sql)){
                     ?>
