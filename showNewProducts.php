@@ -1,8 +1,8 @@
 <?php
 session_start();
     include_once("connection.php");
-    $minId = pg_query($conn, "select min(ProID) from product");
-    $maxId = pg_query($conn, "select max(ProID) from product");
+    $minId = pg_query($conn, "select min(ProID) from public.product");
+    $maxId = pg_query($conn, "select max(ProID) from public.product");
     if(!$minId || !$maxId){
         echo "error" .$minId .$maxId;
     }
