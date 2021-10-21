@@ -42,7 +42,7 @@
                 else{
                     
                     $pass = md5($pass1);
-                    $sq = "select * from customer where Username='$us' or email='$email'";
+                    $sq = "select * from public.customer where Username='$us' or email='$email'";
                     $res = pg_query($conn, $sq);
                     
                     if(pg_num_rows($res)==0){
