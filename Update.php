@@ -107,7 +107,7 @@
                 {
                     if($image['size']<=614400)
                     {
-                        $sql=pg_query($conn, "SELECT * FROM product WHERE ProID!='$id' AND ProName='$name'");
+                        $sql=pg_query($conn, "SELECT * FROM public.product WHERE ProID!='$id' AND ProName='$name'");
                         if(pg_num_rows($sql)==0)
                         {
                             copy($image['tmp_name'], "images/".$image['name']);
@@ -134,7 +134,7 @@
             }
             else
             {
-                $res = pg_query($conn, "SELECT * FROM product WHERE ProID !='$id' AND ProName = '$name'");
+                $res = pg_query($conn, "SELECT * FROM publicproduct WHERE ProID !='$id' AND ProName = '$name'");
                 if(pg_num_rows($res)==0)
                 {
                     $sqlstr="UPDATE product SET ProName='$name', CategoryID='$cate', Price='$pri', Pro_Qty='$quantity' WHERE ProID='$id'";
