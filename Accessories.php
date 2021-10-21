@@ -22,7 +22,7 @@
                 <div class="row" id="row">
                     <div class="col-sm-5 col-md-6">
                         <?php
-                            $sql = pg_query($conn, "SELECT * FROM product WHERE CategoryID = 2") or die(pg_error($conn));
+                            $sql = pg_query($conn, "SELECT * FROM public.product WHERE CategoryID = 2") or die(pg_error($conn));
                             if(pg_num_rows($sql)>0){
                                 while($result = pg_fetch_assoc($sql)){
                         ?>
