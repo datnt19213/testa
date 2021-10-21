@@ -10,7 +10,7 @@
 <body>
 <?php
     include_once("connection.php");
-    $result = pg_query($conn, 'SELECT * FROM product ORDER BY RAND () LIMIT 1');
+    $result = pg_query($conn, 'SELECT * FROM public.product ORDER BY RAND () LIMIT 1');
 ?>
     <div id="content-wrapper">
         <form action="Admin_Page.php" id="formShowNewProduct">
