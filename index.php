@@ -97,7 +97,7 @@
                     }
                 }
                 else {
-                    include_once("Admin_Page.php");
+                    include_once("Main_Page2.php");
                 }
 	    ?>
         <div id="footer">
