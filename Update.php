@@ -16,7 +16,7 @@
     {
         $id = $_GET["id"];
         $result=pg_query($conn, "SELECT * FROM product WHERE ProID='$id'");
-        $row=pg_fetch_array($result, PGSQL_ASSOC);
+        $row=pg_fetch_array($result,NOT NULL, PGSQL_ASSOC);
         $proname=$row['ProName'];
         $proimage=$row['ProImage'];
         $categoryid=$row['CategoryID'];
